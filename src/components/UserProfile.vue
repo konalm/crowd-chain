@@ -7,7 +7,9 @@
     <p>last name: {{ lastName }} </p>
     <p>username: {{ username }}</p>
 
-    <button type="button" class="btn btn-primary mt-2">update</button>
+    <button type="button" class="btn btn-primary mt-2" v-on:click="goToUpdateUserProfile()">
+      update
+    </button>
   </div>
 </div>
 </template>
@@ -18,7 +20,10 @@ import { Vue } from 'vue-class-component';
 export default class UserProfile extends Vue {
   firstName = 'John';
   lastName = 'Doe';
-  username = 'JohnDoe123'
+  username = 'JohnDoe123';
 
+  goToUpdateUserProfile() {
+    this.$router.push({ name: 'UserProfileUpdate'});
+  }
 }
 </script>
